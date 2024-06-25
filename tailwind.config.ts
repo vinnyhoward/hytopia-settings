@@ -19,5 +19,8 @@ const config: Config = {
     },
   },
   plugins: [],
+  corePlugins: {
+    backgroundImage: true,
+  },
 };
 export default config;

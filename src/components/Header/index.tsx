@@ -7,12 +7,29 @@ import "react-loading-skeleton/dist/skeleton.css";
 import hytopiaLogo from "@/assets/svg/hytopia.svg";
 import profileIcon from "@/assets/svg/profile.svg";
 import tempProfileIcon from "@/assets/png/temp_profile_icon.png";
+import SearchInput from "@/components/SearchInput";
 
 const Header: FC = () => {
   return (
-    <div className="fixed top-0 left-0 h-[102px] w-full z-50 px-[50px] py-[25px] flex justify-between items-center">
+    <div className="bg-black fixed top-0 left-0 h-[102px] w-full z-50 px-[50px] py-[25px] flex justify-between items-center">
       <div className="flex flex-row justify-between items-center cursor-pointer">
-        <Image priority src={hytopiaLogo} alt="Hytopia Logo" />
+        <div className="mr-[20px]">
+          <Image priority src={hytopiaLogo} alt="Hytopia Logo" />
+        </div>
+        <div>
+          <span className="text-[#5f6060] font-inter text-lg font-bold mx-[11px] hover:text-[#fff] transition duration-300 ease-in-out">
+            Play
+          </span>
+          <span className="text-[#5f6060] font-inter text-lg font-bold mx-[11px] hover:text-[#fff] transition duration-300 ease-in-out">
+            Marketplace
+          </span>
+          <span className="text-[#5f6060] font-inter text-lg font-bold mx-[11px] hover:text-[#fff] transition duration-300 ease-in-out">
+            Locker
+          </span>
+        </div>
+      </div>
+      <div>
+        <SearchInput placeholder="" />
       </div>
       <div className="flex flex-row justify-around items-center">
         <BalanceDisplay />

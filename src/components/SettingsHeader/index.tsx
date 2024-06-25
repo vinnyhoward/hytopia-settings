@@ -1,12 +1,13 @@
 "use client";
 import { FC } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import SectionTitle from "@/components/SectionTitle";
 import { ROUTES } from "@/constants/routes";
 
 const SettingsHeader: FC = () => {
   const router = useRouter();
   const pathname = usePathname();
-  console.log(pathname);
+
   const renderRoutes = () => {
     return ROUTES.map((item) => {
       const isActive =
@@ -29,11 +30,9 @@ const SettingsHeader: FC = () => {
   };
 
   return (
-    <div className="w-full z-50 px-[50px] py-[25px] flex justify-between items-center mt-[60px]">
+    <div className="w-full z-50 py-[25px] flex justify-between items-center mt-[60px]">
       <div className="flex flex-row justify-between items-center border-t border-b border-[#202121] w-full py-[38px]">
-        <div className="text-white font-inter text-lg font-semibold">
-          Settings
-        </div>
+        <SectionTitle title="Settings" />
         <div className="flex flex-row">{renderRoutes()}</div>
       </div>
     </div>
